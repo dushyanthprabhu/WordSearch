@@ -7,11 +7,27 @@ class WordSearch {
     public static void main(String[] args) {
         try {
             String DirPath = "C:/Users/ASUS/Desktop/word";
+            int c = 1;
             Scanner sc = new Scanner(System.in);
-            searchStr = sc.next();
             File dir = new File(DirPath);
-            Files(dir.listFiles());
-            sc.close();
+
+            searchStr = sc.next();
+
+            switch (c) {
+                case 1:// normal search
+                    for (File file : dir.listFiles()) {
+                        Search(file.getAbsolutePath());
+                    }
+                    break;
+                case 2:// parallel process
+
+                case 3:// thread
+                    Files(dir.listFiles());
+                    sc.close();
+                    break;
+
+            }
+
         } catch (Exception e) {
             System.out.println(e);
         }
