@@ -1,6 +1,5 @@
 import java.io.File;
 import java.util.*;
-import java.nio.file.*;
 
 class WordSearch {
     public static String searchStr;
@@ -98,6 +97,7 @@ class WordSearch {
         return null;
     }
 
+    // Example Code Not Used
     public static void createSampleFiles() {
         try {
             String ogfilepath = "F:/javacode/WordSearch/word/test1.txt";
