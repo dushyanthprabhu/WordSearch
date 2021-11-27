@@ -1,26 +1,29 @@
 import java.io.File;
 import java.util.*;
+import java.nio.file.*;
 
 class WordSearch {
     public static String searchStr;
 
     public static void main(String[] args) {
         try {
-            String DirPath = "C:/Users/ASUS/Desktop/word";
-            int c = 1;
+            String DirPath = "F:/javacode/WordSearch/word";
+            int choice;
             Scanner sc = new Scanner(System.in);
             File dir = new File(DirPath);
-
+            System.out.println("Enter Search String:");
             searchStr = sc.next();
-
-            switch (c) {
+            System.out.println("Method to Search 1-Noraml 2-Parallel 3-Thread");
+            choice = sc.nextInt();
+            switch (choice) {
                 case 1:// normal search
                     for (File file : dir.listFiles()) {
                         Search(file.getAbsolutePath());
                     }
                     break;
                 case 2:// parallel process
-
+                    parallelprocess(dir);
+                    break;
                 case 3:// thread
                     Files(dir.listFiles());
                     sc.close();
@@ -68,6 +71,38 @@ class WordSearch {
             }
             reader.close();
             System.out.println(path + " Closed");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public static void parallelprocess(File dir) {
+        try {
+            List<String> Files = getFiles(dir);
+            Files.parallelStream().forEach(WordSearch::Search);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public static List<String> getFiles(File dir) {
+        try {
+            List<String> Files = new ArrayList<>();
+            for (File file : dir.listFiles()) {
+                Files.add(file.getAbsolutePath());
+            }
+            return Files;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+
+    public static void createSampleFiles() {
+        try {
+            String ogfilepath = "F:/javacode/WordSearch/word/test1.txt";
+            for (int i = 0; i < 10; i++) {
+            }
         } catch (Exception e) {
             System.out.println(e);
         }
