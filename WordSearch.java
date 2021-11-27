@@ -100,7 +100,7 @@ class WordSearch {
     // Example Code Not Used
     public static void createSampleFiles() {
         try {
-            String ogfilepath = "F:/javacode/WordSearch/word/test1.txt";
+            // String ogfilepath = "F:/javacode/WordSearch/word/test1.txt";
             for (int i = 0; i < 10; i++) {
             }
         } catch (Exception e) {
