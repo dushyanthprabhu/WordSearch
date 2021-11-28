@@ -108,6 +108,16 @@ class WordSearch {
 
     public static void TimeTaken(Date start, Date end) {
         try {
+
+            Runtime runtime = Runtime.getRuntime();
+            // Run the garbage collector
+            runtime.gc();
+            // Calculate the used memory
+            long memory = runtime.totalMemory() - runtime.freeMemory();
+            System.out.println("Used memory is bytes: " + memory);
+            System.out.println("Used memory is megabytes: "
+                    + (memory / (1024L * 1024L)));
+
             Date d1 = null;
             Date d2 = null;
             SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
