@@ -7,7 +7,7 @@ class WordSearch {
 
     public static void main(String[] args) {
         try {
-            String DirPath = "F:/javacode/WordSearch/word";
+            String DirPath = "C:\\Users\\ASUS\\Desktop\\Sample";// "F:/javacode/WordSearch/word";
             int choice;
             Date start, end;
             long startTime, endTime;
@@ -127,7 +127,7 @@ class WordSearch {
             // in milliseconds
             long diff = d2.getTime() - d1.getTime();
 
-            long diffSeconds = diff / 1000 % 60;
+            // long diffSeconds = diff / 1000 % 60;
             long diffMinutes = diff / (60 * 1000) % 60;
             long diffHours = diff / (60 * 60 * 1000) % 24;
             long diffDays = diff / (24 * 60 * 60 * 1000);
@@ -135,7 +135,7 @@ class WordSearch {
             System.out.print(diffDays + " days, ");
             System.out.print(diffHours + " hours, ");
             System.out.print(diffMinutes + " minutes, ");
-            System.out.print(diffSeconds + " seconds.");
+            // System.out.print(diffSeconds + " seconds.");
 
         } catch (Exception e) {
             System.out.println(e);
